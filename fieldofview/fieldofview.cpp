@@ -11,10 +11,10 @@ namespace fieldofview {
 
 	void init::read_setting() {
 
-		INIReader reader("fieldofview.ini");
-		if (reader.ParseError() < 0) { return; };
+		INIReader reader("plugins/fieldofview.ini");
+		if (reader.ParseError() < 0) { printf("parse error"); };
 	
-		this->setting = reader.GetReal("SETTING", "fieldofview", 45.00f);
+		this->setting = (float)reader.GetReal("SETTING", "fieldofview", 45.00f);
 
 	};
 
@@ -36,6 +36,7 @@ namespace fieldofview {
 
 		auto ptr = init::getsingleton();
 		fov_setting = ptr->setting;
+		printf("%f\n", fov_setting);
 
 		auto addr = (0x1401C527A);
 		rFOV1 = (0x1401C5281);
