@@ -43,11 +43,6 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
-        FILE* fp;
-        AllocConsole();
-        SetConsoleTitleA("fieldofview");
-        freopen_s(&fp, "CONOUT$", "w", stdout);
-        //printf("HELLO IM HERE \n");
         InitInstance();
         break;
     case DLL_PROCESS_DETACH:

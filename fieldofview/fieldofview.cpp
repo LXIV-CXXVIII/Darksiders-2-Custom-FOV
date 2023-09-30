@@ -36,7 +36,6 @@ namespace fieldofview {
 
 		auto ptr = init::getsingleton();
 		fov_setting = ptr->setting;
-		printf("%f\n", fov_setting);
 
 		auto addr = (0x1401C527A);
 		rFOV1 = (0x1401C5281);
